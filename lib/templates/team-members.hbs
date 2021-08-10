@@ -1,0 +1,32 @@
+
+{{#each team_members}}
+<div class="team_member">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="stretchy-wrapper">
+        <div class="photo" style="background-image: url('{{photo}}')"></div>
+      </div>
+    </div>
+    <div class="col-md-9">
+        <h3>
+          {{#if ../linktopage}}<a href="{{permalink}}">{{/if}}{{name}}{{#if ../linktopage}}</a>{{/if}}
+          <span class="">{{title}}</span>
+        </h3>
+        {{{bio}}}
+        <ul class="elementor-icon-list-items elementor">
+          <li class="elementor-icon-list-item">
+            <a href="tel:{{tel}}" style="text-decoration: none;">
+              <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fas fa-phone-square-alt"></i></span><span class="elementor-icon-list-text">{{phone}}</span>
+            </a>
+          </li>
+          {{#if email}}<li class="elementor-icon-list-item">
+            <a href="mailto:{{email}}" style="text-decoration: none;">
+              <span class="elementor-icon-list-icon"><i aria-hidden="true" class="fas fa-envelope"></i></span><span class="elementor-icon-list-text">{{email}}</span>
+            </a>
+          </li>{{/if}}
+        </ul>
+    </div>
+  </div>
+  <hr/>
+</div>
+{{/each}}

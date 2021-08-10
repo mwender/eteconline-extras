@@ -1,0 +1,14 @@
+{
+    "name": "mwender/eteconline-extras",
+    "description": "WordPress plugin for extending capabilities of the ETEC website",
+    "type": "wordpress-plugin",
+    "require": {
+        "zordius/lightncandy": "^1.2"
+    },
+    "authors": [
+        {
+            "name": "Michael Wender",
+            "email": "michael@michaelwender.com"
+        }
+    ]
+}
