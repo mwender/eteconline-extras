@@ -19,3 +19,4 @@ This plugin provides extra functionality for the East Tennessee Economic Council
 
 = 0.1.0 =
 * First commit.
+* Adding Newsletter Archive shortcodes.

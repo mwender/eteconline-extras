@@ -58,3 +58,13 @@ if( ! function_exists( 'uber_log' ) ){
   }
 }
 
+
+function download_newsletters(){
+  require_once( ETEC_PLUGIN_PATH . 'newsletters.php' );
+  foreach( $newsletters as $newsletter ){
+    $timestamp = strtotime( $newsletter['date'] );
+    $date = date( 'Y-m-d', $timestamp );
+    uber_log('🔔 $date = ' . $date . "\nTitle = " . $newsletter['title'] . "\nURL = " . $newsletter['url'] );
+    shell_exec( 'wget --output-document ' . ETEC_PLUGIN_PATH . 'lib/html/newsletters/' . $date . '.html "' . html_entity_decode( $newsletter['url'] ) . '"' );
+  }
+}

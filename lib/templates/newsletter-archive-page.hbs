@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>ETEC Newsletter Archive</title>
+  <style type="text/css">
+  body{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1em;
+  }
+  .wrapper{
+    max-width: 680px;
+    margin: 40px auto;
+    background: #eee;
+    padding: 1.5em 2em;
+    border-radius: 10px;
+  }
+  h1{
+    margin: 0 0 1em 0;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>ETEC Newsletter Archive</h1>
+    <ul>
+    {{#each newsletters}}
+      <li><a href="{{permalink}}">{{{title}}}</a></li>
+    {{/each}}
+    </ul>
+  </div>
+</body>
+</html>

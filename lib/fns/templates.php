@@ -1,6 +1,44 @@
 <?php
 namespace eteconline\templates;
 
+/**
+ * Adds our `newsletter-blank-page-template.php` to the list of available page templates in the WordPress editor.
+ *
+ * @param      array  $templates  The templates
+ *
+ * @return     array  Modified $templates array.
+ */
+function add_page_template( $templates ){
+  $templates['newsletter-blank-page-template.php'] = 'Blank Page Template';
+  return $templates;
+}
+add_filter( 'theme_page_templates', __NAMESPACE__ . '\\add_page_template' );
+
+/**
+ * Force WordPress to look inside this plugin for our `newsletter-blank-page-template.php`.
+ *
+ * @param      string  $template  The template
+ *
+ * @return     string  Modified path to the template.
+ */
+function redirect_page_template( $template ){
+  $post = get_post();
+  $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+  if( 'newsletter-blank-page-template.php' == basename( $page_template ) ){
+    $template = ETEC_PLUGIN_PATH . 'lib/templates/newsletter-blank-page-template.php';
+  }
+  return $template;
+}
+add_filter( 'page_template', __NAMESPACE__ . '\\redirect_page_template' );
+
+/**
+ * Renders a handlebars template
+ *
+ * @param      string  $filename  The filename
+ * @param      array   $data      The data
+ *
+ * @return     mixed    Returns an HTML string of the rendered template or FALSE is the template file was not found.
+ */
 function render_template( $filename = '', $data = [] ){
   if( empty( $filename ) )
     return false;
