@@ -7,7 +7,7 @@
  * Author URI:      https://mwender.com
  * Text Domain:     eteconline-extras
  * Domain Path:     /languages
- * Version:         0.1.2
+ * Version:         0.2.0
  *
  * @package         Eteconline_Extras
  */
@@ -34,7 +34,7 @@ if( file_exists( ETEC_PLUGIN_PATH . 'vendor/autoload.php' ) ){
 // Load required files
 //require_once( ETEC_PLUGIN_PATH . 'lib/fns/acf-json-save-point.php' );
 //require_once( ETEC_PLUGIN_PATH . 'lib/fns/admin-custom-columns.php' );
-//require_once( ETEC_PLUGIN_PATH . 'lib/fns/enqueues.php' );
+require_once( ETEC_PLUGIN_PATH . 'lib/fns/enqueues.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/shortcodes.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/templates.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/utilities.php' );

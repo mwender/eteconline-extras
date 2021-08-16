@@ -1,11 +1,11 @@
 /* Flexbox Grid CSS */
-.container-fluid,
-.container {
+.fb-container-fluid,
+.fb-container {
   margin-right: auto;
   margin-left: auto;
 }
 
-.container-fluid {
+.fb-container-fluid {
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -268,7 +268,7 @@
 }
 
 @media only screen and (min-width: 48em) {
-  .container {
+  .fb-container {
     width: 49rem;
   }
 
@@ -499,7 +499,7 @@
 }
 
 @media only screen and (min-width: 64em) {
-  .container {
+  .fb-container {
     width: 65rem;
   }
 
@@ -730,7 +730,7 @@
 }
 
 @media only screen and (min-width: 75em) {
-  .container {
+  .fb-container {
     width: 76rem;
   }
 

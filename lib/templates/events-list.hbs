@@ -1,0 +1,16 @@
+<div class="row center-xs events">
+  <div class="content">
+    <div class="col-md">
+      <h2>ETEC Friday Meetings</h2>
+    </div>
+  </div>
+</div>
+<div class="row center-xs events">
+  {{#each events}}
+    <div class="col-sm event">
+      <a href="{{permalink}}"><img src="{{thumbnail}}" width="400" height="300" /></a>
+      <h3 class="title"><a href="{{permalink}}">{{title}}</a></h3>
+      <p>{{{details}}}</p>
+    </div>
+  {{/each}}
+</div>
