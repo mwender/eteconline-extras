@@ -5,7 +5,7 @@ Tags: shortcodes
 Requires at least: 5.7
 Tested up to: 5.7.2
 Requires PHP: 7.4
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 == Changelog ==
+
+= 0.3.0 =
+* Adding feed processing for GravityForms child forms.
+* Outputting content on the WooCommerce checkout screen.
 
 = 0.2.0 =
 * Adding `[friday_events/]` shortcode for listing ETEC Friday Events.
