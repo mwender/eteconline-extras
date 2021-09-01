@@ -1,0 +1,68 @@
+{
+    "key": "group_612fb7ca1e364",
+    "title": "ETEC Settings",
+    "fields": [
+        {
+            "key": "field_612fb7d8eb420",
+            "label": "WooCommerce Memberships Thank You Message",
+            "name": "woocommerce_memberships_thank_you_message",
+            "type": "post_object",
+            "instructions": "Using the filter <code>woocommerce_memberships_thank_you_message<\/code>, we are able to insert the template you select as a part of the message shown to the user immediately after checkout. (Requires the WooCommerce Memberships plugin to be installed.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "elementor_library"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_612fb87deb421",
+            "label": "Woocommerce Account Dashboard Message",
+            "name": "woocommerce_account_dashboard_message",
+            "type": "post_object",
+            "instructions": "Hooks to <code>etec_dashboard_message<\/code> and displays the selected Elementor template on the user's WooCommerce Account Dashboard.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "elementor_library"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "etec-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1630521847
+}
