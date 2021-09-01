@@ -32,8 +32,8 @@ if( file_exists( ETEC_PLUGIN_PATH . 'vendor/autoload.php' ) ){
 
 
 // Load required files
-//require_once( ETEC_PLUGIN_PATH . 'lib/fns/acf-json-save-point.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/acf.php' );
+require_once( ETEC_PLUGIN_PATH . 'lib/fns/acf-json-save-point.php' );
 //require_once( ETEC_PLUGIN_PATH . 'lib/fns/admin-custom-columns.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/enqueues.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/gravityforms.php' );
