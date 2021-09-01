@@ -94,24 +94,6 @@ function display_friday_events( $atts ){
 }
 add_shortcode( 'friday_events', __NAMESPACE__ . '\\display_friday_events' );
 
-function get_endpoint( $atts ){
-  $args = shortcode_atts([
-    'name' => null,
-  ], $atts );
-
-  switch( $args['name'] ){
-    case 'team':
-      $endpoint = wc_memberships_get_members_area_endpoint();
-      break;
-
-    default:
-      $endpoint = 'No endpoint found for <code>' . $args['name'] . '</code>.';
-  }
-
-  return $endpoint;
-}
-add_shortcode( 'endpoint', __NAMESPACE__ . '\\get_endpoint' );
-
 /**
  * Displays a listing of past newsletters stored inside lib/html/newsletters/.
  *
