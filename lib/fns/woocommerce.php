@@ -72,4 +72,4 @@ function woocommerce_dashboard_message(){
     }
   }
 }
-add_action( 'etec_dashboard_message', __NAMESPACE__ . '\\woocommerce_dashboard_message' ); //woocommerce_account_dashboard
+add_action( 'woocommerce_account_dashboard', __NAMESPACE__ . '\\woocommerce_dashboard_message' );

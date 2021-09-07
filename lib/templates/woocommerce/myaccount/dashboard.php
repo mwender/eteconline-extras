@@ -69,7 +69,13 @@ $allowed_html = array(
     </p>
 
     </div>
-    <?php do_action('etec_dashboard_message'); ?>
+    <?php
+    /**
+     * We've moved this action up on the template so we can show our
+     * Elementor template with instructions front and center.
+     */
+    do_action( 'woocommerce_account_dashboard' );
+    ?>
     <div class="wc-MyAccount-inner-content">
 
         <div class="wc-MyAccount-dashboard-block">
@@ -216,7 +222,7 @@ $allowed_html = array(
    *
    * @since 2.6.0
    */
-  do_action( 'woocommerce_account_dashboard' );
+  //do_action( 'woocommerce_account_dashboard' );
 
   /**
    * Deprecated woocommerce_before_my_account action.
