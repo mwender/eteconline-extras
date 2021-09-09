@@ -5,7 +5,7 @@ Tags: shortcodes
 Requires at least: 5.7
 Tested up to: 5.7.2
 Requires PHP: 7.4
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 == Changelog ==
+
+= 0.4.2 =
+* Redirecting to user profile edit screen after new user registers from a team invitation.
 
 = 0.4.1 =
 * Hooking WooCommerce Account Dashboard message to `woocommerce_account_dashboard` so that it will display immediately after placing an order and inside the customer order email.

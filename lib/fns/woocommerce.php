@@ -9,6 +9,22 @@ use function eteconline\utilities\{get_alert};
 remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 
 /**
+ * Filters the URL for redirecting a team member that just joined by inviation.
+ *
+ * Redirects to the User Profile edit screen.
+ *
+ * @param      string  $redirect_to  The URL to redirect to
+ * @param      object  $team         The team object
+ * @param      object  $invitation   The invitation object
+ */
+function get_team_member_joined_redirect_url( $redirect_to, $team, $invitation ){
+  $current_user = wp_get_current_user();
+  $edit_profile_url = site_url( 'members/' . $current_user->user_login . '/profile/edit/' );
+  return $edit_profile_url;
+}
+add_filter( 'wc_memberships_for_teams_join_team_redirect_to', __NAMESPACE__ . '\\get_team_member_joined_redirect_url', 10, 3 );
+
+/**
  * Add `lib/templates/woocommerce` as a location WooCommerce looks for templates.
  *
  * @param      string  $template       The template
