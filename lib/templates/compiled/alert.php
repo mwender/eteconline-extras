@@ -30,7 +30,13 @@ use \LightnCandy\SafeString as SafeString;use \LightnCandy\Runtime as LR;return 
     );
     
     $inary=is_array($in);
-    return '<div class="elementor-alert elementor-widget elementor-alert-'.htmlspecialchars((string)(($inary && isset($in['type'])) ? $in['type'] : null), ENT_QUOTES, 'UTF-8').' '.htmlspecialchars((string)(($inary && isset($in['css_classes'])) ? $in['css_classes'] : null), ENT_QUOTES, 'UTF-8').'" role="alert">
+    return '<style>
+.elementor-alert .elementor-alert-description{
+    line-height: 1.5em;
+    display: block;
+}
+</style>
+<div class="elementor-alert elementor-widget elementor-alert-'.htmlspecialchars((string)(($inary && isset($in['type'])) ? $in['type'] : null), ENT_QUOTES, 'UTF-8').' '.htmlspecialchars((string)(($inary && isset($in['css_classes'])) ? $in['css_classes'] : null), ENT_QUOTES, 'UTF-8').'" role="alert">
     '.((LR::ifvar($cx, (($inary && isset($in['title'])) ? $in['title'] : null), false)) ? '<span class="elementor-alert-title">'.htmlspecialchars((string)(($inary && isset($in['title'])) ? $in['title'] : null), ENT_QUOTES, 'UTF-8').'</span>' : '').'
     <span class="elementor-alert-description">'.(($inary && isset($in['description'])) ? $in['description'] : null).'</span>
 </div>';

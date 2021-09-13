@@ -9,6 +9,23 @@ use function eteconline\utilities\{get_alert};
 remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 
 /**
+ * Renders an Elementor template just before the "Your Order" and payment fields during a WooCommerce checkout.
+ */
+function checkout_before_order_review(){
+  $template = get_field( 'woocommerce_checkout_before_order_reivew_message', 'option' );
+  if( $template ){
+    echo do_shortcode( '[elementor-template id="' . $template->ID . '"]' ) . $message;
+  } else {
+    $user = wp_get_current_user();
+    if( current_user_can( 'activate_plugins' ) ){
+      echo get_alert(['type' => 'info', 'title' => 'No Template Set', 'description' => 'Fill this area with any content you desire by 1) creating an Elementor template with the content, and 2) Going to "ETEC Settings" and specifying the template for the "WooCommerce Checkout Before Order Reivew Message".']) . $message;
+    }
+  }
+  echo $message;
+}
+add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\checkout_before_order_review', 99 );
+
+/**
  * Filters the URL for redirecting a team member that just joined by inviation.
  *
  * Redirects to the User Profile edit screen.
