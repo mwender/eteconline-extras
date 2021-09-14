@@ -12,7 +12,7 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
  * Renders an Elementor template just before the "Your Order" and payment fields during a WooCommerce checkout.
  */
 function checkout_before_order_review(){
-  $template = get_field( 'woocommerce_checkout_before_order_reivew_message', 'option' );
+  $template = get_field( 'woocommerce_checkout_before_order_review_message', 'option' );
   if( $template ){
     echo do_shortcode( '[elementor-template id="' . $template->ID . '"]' ) . $message;
   } else {

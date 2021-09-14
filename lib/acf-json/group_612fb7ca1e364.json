@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_613f54ae0937d",
-            "label": "WooCommerce Checkout Before Order Reivew Message",
-            "name": "woocommerce_checkout_before_order_reivew_message",
+            "label": "WooCommerce Checkout Before Order Review Message",
+            "name": "woocommerce_checkout_before_order_review_message",
             "type": "post_object",
             "instructions": "Add a note before the cart and payment fields on the WooCommerce checkout screen. This is useful to share messages like, \"You'll have the option to disable any recurring payments listed below after completing your order.\"",
             "required": 0,
@@ -86,5 +86,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631540560
+    "modified": 1631634722
 }
