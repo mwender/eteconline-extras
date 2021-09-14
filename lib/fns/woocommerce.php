@@ -83,7 +83,7 @@ function woocommerce_thankyou_content( $order_id ){
   if ( $order_id instanceof \WC_Order )
     $order_id = $order_id->get_id();
 
-  if ( is_numeric( $order_id ) ) {{
+  if ( is_numeric( $order_id ) ) {
     $memberships = wc_memberships_get_order_access_granted_memberships( $order_id );
     if( empty( $memberships ) )
       return false;
