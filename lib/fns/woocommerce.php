@@ -77,19 +77,30 @@ add_filter( 'woocommerce_locate_template', __NAMESPACE__ . '\\woocommerce_templa
  *
  * @return     string  HTML to display on the WooCommerce checkout screen.
  */
-function woocommerce_checkout_content( $message, $order_id, $memberships ){
+function woocommerce_thankyou_content( $order_id ){
   $template = get_field( 'woocommerce_memberships_thank_you_message', 'option' );
+
+  if ( $order_id instanceof \WC_Order )
+    $order_id = $order_id->get_id();
+
+  if ( is_numeric( $order_id ) ) {{
+    $memberships = wc_memberships_get_order_access_granted_memberships( $order_id );
+    if( empty( $memberships ) )
+      return false;
+  }
+
+  $html = '';
   if( $template ){
-    return do_shortcode( '[elementor-template id="' . $template->ID . '"]' ) . $message;
+    $html = do_shortcode( '[elementor-template id="' . $template->ID . '"]' );
   } else {
     $user = wp_get_current_user();
     if( current_user_can( 'activate_plugins' ) ){
-      return get_alert(['type' => 'info', 'title' => 'No Template Set', 'description' => 'Fill this area with any content you desire by 1) creating an Elementor template with the content, and 2) Going to "ETEC Settings" and specifying the template for the "WooCommerce Account Dashboard Message".']) . $message;
+      $html = get_alert(['type' => 'info', 'title' => 'No Template Set', 'description' => 'Fill this area with any content you desire by 1) creating an Elementor template with the content, and 2) Going to "ETEC Settings" and specifying the template for the "WooCommerce Account Dashboard Message".']);
     }
   }
-  return $message;
+  echo $html;
 }
-add_filter( 'woocommerce_memberships_thank_you_message', __NAMESPACE__ . '\\woocommerce_checkout_content', 10, 3 );
+add_action( 'woocommerce_thankyou', __NAMESPACE__ . '\\woocommerce_thankyou_content', 10 );
 
 /**
  * Renders an Elementor template on the WooCommerce Dashboard.
