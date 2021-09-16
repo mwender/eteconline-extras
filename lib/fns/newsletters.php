@@ -2,6 +2,41 @@
 
 $newsletters = [
   [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzNSwiNGMwNmY5YTE0MmQ5IiwxNDEsImU0NTc4ZSIsMTg5LDFd',
+    'date' => 'September 15, 2021',
+    'title' => 'ETEC News &amp; Notes, September 15, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzNCwiNTc4M2FjNWFkY2Q2IiwxNDEsImU0NTc4ZSIsMTg4LDFd',
+    'date' => 'September 8, 2021',
+    'title' => 'ETEC News &amp; Notes, September 8, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzMywiMzRkN2MyZDg4Mjk2IiwxNDEsImU0NTc4ZSIsMTg3LDFd',
+    'date' => 'September 3, 2021',
+    'title' => 'ETEC Friday Morning | September 3, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzMiwiY2FlNmNiNWFlOGRmIiwxNDEsImU0NTc4ZSIsMTg2LDFd',
+    'date' => 'September 1, 2021',
+    'title' => 'ETEC News &amp; Notes, September 1, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzMSwiYzlkMzRiZjEwNjk3IiwxNDEsImU0NTc4ZSIsMTg1LDFd',
+    'date' => 'August 25, 2021',
+    'title' => 'ETEC News &amp; Notes, August 25, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzMCwiZDFkM2YzOWI1N2RlIiwxNDEsImU0NTc4ZSIsMTg0LDFd',
+    'date' => 'August 18, 2021',
+    'title' => 'ETEC News &amp; Notes, August 18, 2021',
+  ],
+  [
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIyOSwiZDFhNGRlY2RhNTUzIiwxNDEsImU0NTc4ZSIsMTgzLDFd',
+    'date' => 'August 11, 2021',
+    'title' => 'ETEC News &amp; Notes, August 11, 2021',
+  ],
+  [
     'date' => 'August 9, 2021',
     'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIyOCwiN2MyYmIyOGY0NTgzIiwxNDEsImU0NTc4ZSIsMTgyLDFd',
     'title' => 'Invitation: ETEC Special Virtual Program on Innovation Districts - Monday 8/16/21',
