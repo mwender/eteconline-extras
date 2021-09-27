@@ -89,6 +89,25 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_61523b3702744",
+            "label": "Disable WooCommerce Order Emails?",
+            "name": "disable_woocommerce_order_emails",
+            "type": "true_false",
+            "instructions": "Select this option when you wish to stop WooCommerce from sending any order notification emails. This is useful when you are manually assigning memberships, and you don't want to send \"New Order\" notification emails.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Switch on to disable WooCommerce Order Emails.",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -108,5 +127,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632747493
+    "modified": 1632781066
 }

@@ -25,6 +25,35 @@ function checkout_before_order_review(){
 }
 add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\checkout_before_order_review', 99 );
 
+function disable_woocommerce_order_emails( $email_class ){
+  $disable = get_field( 'disable_woocommerce_order_emails', 'option' );
+  uber_log( '🔔 $disable = ' . $disable );
+  if ( is_admin() && ! wp_doing_ajax() && $disable ) {
+    add_action( 'admin_notices', function(){
+      ?>
+      <div class="notice notice-warning" style="margin-bottom: 1em;">
+        <p><?php _e( 'NOTE: WooCommerce order emails are currently disabled when editing orders in the admin. Please see ETEC Settings to reenable them.', 'eteconline' ); ?></p>
+      </div>
+      <?php
+    });
+    // New order emails
+    remove_action( 'woocommerce_order_status_pending_to_processing_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_pending_to_completed_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_pending_to_on-hold_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_failed_to_processing_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_failed_to_completed_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_failed_to_on-hold_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
+
+    // Processing order emails
+    remove_action( 'woocommerce_order_status_pending_to_processing_notification', array( $email_class->emails['WC_Email_Customer_Processing_Order'], 'trigger' ) );
+    remove_action( 'woocommerce_order_status_pending_to_on-hold_notification', array( $email_class->emails['WC_Email_Customer_Processing_Order'], 'trigger' ) );
+
+    // Completed order emails
+    remove_action( 'woocommerce_order_status_completed_notification', array( $email_class->emails['WC_Email_Customer_Completed_Order'], 'trigger' ) );
+  }
+}
+add_action( 'woocommerce_email', __NAMESPACE__ . '\\disable_woocommerce_order_emails' );
+
 /**
  * Filters the URL for redirecting a team member that just joined by inviation.
  *
