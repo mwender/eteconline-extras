@@ -67,6 +67,28 @@
             "multiple": 0,
             "return_format": "object",
             "ui": 1
+        },
+        {
+            "key": "field_6151bfad7519e",
+            "label": "Login Screen Message",
+            "name": "wplogin_message",
+            "type": "post_object",
+            "instructions": "Assign an Elementor template to display above the login form.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "elementor_library"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
         }
     ],
     "location": [
@@ -86,5 +108,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631634722
+    "modified": 1632747493
 }
