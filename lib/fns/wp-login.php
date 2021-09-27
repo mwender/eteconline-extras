@@ -11,7 +11,7 @@ namespace eteconline\wplogin;
  */
 function filter_login_message( $message ){
   $template = get_field( 'wplogin_message', 'option' );
-  if( $template ){
+  if( $template && ! isset( $_GET['action'] ) ){
     $message = '<div class="login-heading"><h2>Sign In</h2></div>';
     $message.= do_shortcode( '[elementor-template id="' . $template->ID . '"]' );
   }

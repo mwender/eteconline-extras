@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.7.2  
 **Requires PHP:** 7.4  
-**Stable tag:** 0.4.8  
+**Stable tag:** 0.4.9  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 0.4.9 ###
+* Checking if `$_GET['action']` is set before displaying `login_message`.
 
 ### 0.4.8 ###
 * Adding `login_message` filter for adding an Elementor template above the wp-login.php login form.
