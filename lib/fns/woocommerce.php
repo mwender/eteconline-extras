@@ -27,7 +27,6 @@ add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\check
 
 function disable_woocommerce_order_emails( $email_class ){
   $disable = get_field( 'disable_woocommerce_order_emails', 'option' );
-  uber_log( '🔔 $disable = ' . $disable );
   if ( is_admin() && ! wp_doing_ajax() && $disable ) {
     add_action( 'admin_notices', function(){
       ?>

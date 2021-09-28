@@ -108,6 +108,25 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_6153210818d8c",
+            "label": "Password Reset Email Message",
+            "name": "password_reset_message",
+            "type": "wysiwyg",
+            "instructions": "<p>This is the message sent when a password reset is requested for a user account. These tokens are available: <code>{{sitename}}<\/code>, <code>{{reset_url}}<\/code>, and <code>{{username}}<\/code>.<\/p>\r\n\r\n<p>NOTE: Use the <code>{{reset_url}}<\/code> token as the \"link\" attribute value in a hyperlink (e.g. \"Click here\" to reset your password). When adding <code>{{reset_url}}<\/code> as the link value, be careful as WordPress likes to insert \"http:\/\/\" as a part of the attribute value, remove that if it does.<\/p>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -127,5 +146,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632781066
+    "modified": 1632839172
 }
