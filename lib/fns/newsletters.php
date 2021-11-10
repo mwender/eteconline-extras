@@ -2,6 +2,46 @@
 
 $newsletters = [
   [
+    'date' => 'November 3, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzI0NSwiMWY5MDU2YzRmZDVhIiwwLDAsMTk3LDFd',
+    'title' => 'ETEC News &amp; Notes, November 3, 2021',
+  ],
+  [
+    'date' => 'October 27, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzI0NiwiMDQ2M2UyYWI4MTg2IiwwLDAsMTk2LDFd',
+    'title' => 'ETEC News &amp; Notes, October 27, 2021',
+  ],
+  [
+    'date' => 'October 20, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzI0MSwiNTExNmViNWQ5ZGI4IiwwLDAsMTk1LDFd',
+    'title' => 'ETEC News &amp; Notes, October 20, 2021',
+  ],
+  [
+    'date' => 'October 13, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzI0MCwiYWJlODI1ODVhYzI3IiwwLDAsMTk0LDFd',
+    'title' => 'ETEC News &amp; Notes, October 13, 2021',
+  ],
+  [
+    'date' => 'October 6, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzOSwiOWJlYjIzOWE4NmE2IiwwLDAsMTkzLDFd',
+    'title' => 'ETEC News &amp; Notes, October 6, 2021',
+  ],
+  [
+    'date' => 'September 29, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzOCwiNGVlYmI1MjA0ZWI5IiwwLDAsMTkyLDFd',
+    'title' => 'ETEC News &amp; Notes, September 29, 2021',
+  ],
+  [
+    'date' => 'September 28, 2021',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzNywiODFkMTc3ZWE3ZWRiIiwwLDAsMTkxLDFd',
+    'title' => 'Reminder: ETEC + ORCC Virtual &#039;Business Lunch Live&#039;, 9/29 @ noon',
+  ],
+  [
+    'date' => 'September 22, 2021  ',
+    'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzNiwiNDBkYTQ1YTIwY2RhIiwwLDAsMTkwLDFd',
+    'title' => 'ETEC News &amp; Notes, September 22, 2021',
+  ],
+  [
     'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzIzNSwiNGMwNmY5YTE0MmQ5IiwxNDEsImU0NTc4ZSIsMTg5LDFd',
     'date' => 'September 15, 2021',
     'title' => 'ETEC News &amp; Notes, September 15, 2021',
