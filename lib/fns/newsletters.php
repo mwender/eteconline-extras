@@ -2,6 +2,16 @@
 
 $newsletters = [
   [
+    'date' => 'November 11, 2021',
+    'url' => 'https://eteconline.org/?mailpoet_router&endpoint=view_in_browser&action=view&data=WzI1MSwiY2JjODllMzdkNWYwIiwxNDEsImU0NTc4ZSIsMTk5LDFd',
+    'title' => 'Special Note: ETEC\'s Change in Speaker for November 12, 2021',
+  ],
+  [
+    'date' => 'November 10, 2021',
+    'url' => 'https://eteconline.org/?mailpoet_router&endpoint=view_in_browser&action=view&data=WzI0OSwiZGE0NzM3MmVhNjc4IiwxNDEsImU0NTc4ZSIsMTk4LDFd',
+    'title' => 'ETEC News & Notes, November 10, 2021',
+  ],
+  [
     'date' => 'November 3, 2021',
     'url' => 'https://eteconline.org?mailpoet_router&amp;endpoint=view_in_browser&amp;action=view&amp;data=WzI0NSwiMWY5MDU2YzRmZDVhIiwwLDAsMTk3LDFd',
     'title' => 'ETEC News &amp; Notes, November 3, 2021',
