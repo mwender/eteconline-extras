@@ -12,6 +12,18 @@ remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_noti
  * Renders an Elementor template just before the "Your Order" and payment fields during a WooCommerce checkout.
  */
 function checkout_before_order_review(){
+
+  // Check cart for any memberships
+  $cart_has_membership = false;
+  foreach( \WC()->cart->get_cart() as $cart_item_key => $cart_item ){
+    $product_id = $cart_item['product_id'];
+    if( has_term( 'memberships', 'product_cat', $product_id ) )
+      $cart_has_membership = true;
+  }
+
+  if( ! $cart_has_membership )
+    return;
+
   $template = get_field( 'woocommerce_checkout_before_order_review_message', 'option' );
   if( $template ){
     echo do_shortcode( '[elementor-template id="' . $template->ID . '"]' ) . $message;

@@ -3,9 +3,9 @@
 **Donate link:** https://mwender.com/  
 **Tags:** shortcodes  
 **Requires at least:** 5.7  
-**Tested up to:** 5.7.2  
+**Tested up to:** 5.8.2  
 **Requires PHP:** 7.4  
-**Stable tag:** 0.6.3  
+**Stable tag:** 0.7.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 0.7.0 ###
+* Checking user's shopping cart for any products in the "Memberships" Product Category before displaying `woocommerce_thankyou_content` under "Your Order".
 
 ### 0.6.3 ###
 * Last sync of newsletters before launch.
