@@ -37,6 +37,11 @@ function checkout_before_order_review(){
 }
 add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\checkout_before_order_review', 99 );
 
+/**
+ * Disables the woocommerce order emails.
+ *
+ * @param      object  $email_class  The email class
+ */
 function disable_woocommerce_order_emails( $email_class ){
   $disable = get_field( 'disable_woocommerce_order_emails', 'option' );
   if ( is_admin() && ! wp_doing_ajax() && $disable ) {
@@ -64,6 +69,22 @@ function disable_woocommerce_order_emails( $email_class ){
   }
 }
 add_action( 'woocommerce_email', __NAMESPACE__ . '\\disable_woocommerce_order_emails' );
+
+/**
+ * Prevents the "Field 'Team Name' is a required field." error duing checkout for subscription renewals with Manual Payment.
+ *
+ * @param      array   $fields   The fields
+ * @param      object  $product  The product object
+ */
+function filter_memberships_for_teams_product_fields( $fields, $product ){
+  foreach ( $fields as $key => $field ) {
+    if( 'team_name' == $key && ! empty( $field['required'] ) ){
+      if( ! isset( $_REQUEST['team_name'] ) || empty( $_REQUEST['team_name'] ) )
+        $_REQUEST['team_name'] = 'Your Team Name goes here';
+    }
+  }
+}
+add_filter( 'wc_memberships_for_teams_product_team_user_input_fields', __NAMESPACE__ . '\\filter_memberships_for_teams_product_fields', 10, 2 );
 
 /**
  * Filters the URL for redirecting a team member that just joined by inviation.
