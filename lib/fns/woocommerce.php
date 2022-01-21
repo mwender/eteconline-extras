@@ -9,6 +9,17 @@ use function eteconline\utilities\{get_alert};
 remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 
 /**
+ * Filter the new order email from WooCommerce.
+ */
+//do_action( 'woocommerce_email_order_details', $order, $sent_to_admin, $plain_text, $email );
+/* 01/18/2022 (16:14) - CONTINUE HERE
+function filter_new_order_email( $order, $sent_to_admin, $plain_text, $email ){
+
+}
+add_action( 'woocommerce_email_order_details', __NAMESPACE__ . '\\filter_new_order_email', 20, 4 );
+/**/
+
+/**
  * Renders an Elementor template just before the "Your Order" and payment fields during a WooCommerce checkout.
  */
 function checkout_before_order_review(){
@@ -26,14 +37,13 @@ function checkout_before_order_review(){
 
   $template = get_field( 'woocommerce_checkout_before_order_review_message', 'option' );
   if( $template ){
-    echo do_shortcode( '[elementor-template id="' . $template->ID . '"]' ) . $message;
+    echo do_shortcode( '[elementor-template id="' . $template->ID . '"]' );
   } else {
     $user = wp_get_current_user();
     if( current_user_can( 'activate_plugins' ) ){
-      echo get_alert(['type' => 'info', 'title' => 'No Template Set', 'description' => 'Fill this area with any content you desire by 1) creating an Elementor template with the content, and 2) Going to "ETEC Settings" and specifying the template for the "WooCommerce Checkout Before Order Reivew Message".']) . $message;
+      echo get_alert(['type' => 'info', 'title' => 'No Template Set', 'description' => 'Fill this area with any content you desire by 1) creating an Elementor template with the content, and 2) Going to "ETEC Settings" and specifying the template for the "WooCommerce Checkout Before Order Reivew Message".']);
     }
   }
-  echo $message;
 }
 add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\checkout_before_order_review', 99 );
 
@@ -48,7 +58,10 @@ function disable_woocommerce_order_emails( $email_class ){
     add_action( 'admin_notices', function(){
       ?>
       <div class="notice notice-warning" style="margin-bottom: 1em;">
-        <p><?php _e( 'NOTE: WooCommerce order emails are currently disabled when editing orders in the admin. Please see ETEC Settings to reenable them.', 'eteconline' ); ?></p>
+        <p><?php
+        $timestamp = get_field( 'disable_woocommerce_order_emails_timestamp', 'option' );
+        $user = get_field( 'disable_woocommerce_order_emails_user', 'option' );
+        _e( 'NOTE: WooCommerce order emails are currently disabled when editing orders in the admin. Please see <a href="' . site_url( '/wp-admin/admin.php?page=etec-general-settings' ) . '">ETEC Settings</a> to reenable them. (Disabled by ' . $user . ' on ' . $timestamp . '.)', 'eteconline' ); ?></p>
       </div>
       <?php
     });

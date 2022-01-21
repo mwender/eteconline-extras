@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.8.3  
 **Requires PHP:** 7.4  
-**Stable tag:** 0.8.0  
+**Stable tag:** 0.9.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,10 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 0.9.0 ###
+* Adding timestamp and user meta for "WooCommerce order emails are currently disabled" message.
+* Adding ACF field for Customer Renewal Invoice Email.
 
 ### 0.8.0 ###
 * Allowing all members of a Team to view and pay for invoices associated with that Team's subscription.

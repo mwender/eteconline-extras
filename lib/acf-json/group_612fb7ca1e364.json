@@ -99,7 +99,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -110,11 +110,66 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_61eb18daa3d66",
+            "label": "Timestamp (Readonly)",
+            "name": "disable_woocommerce_order_emails_timestamp",
+            "type": "date_time_picker",
+            "instructions": "Saves the date and time WC Emails were disabled. NOTE: Readonly, do not edit this field!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y g:i a",
+            "return_format": "m\/d\/Y g:i a",
+            "first_day": 0
+        },
+        {
+            "key": "field_61eb1c9c97bb1",
+            "label": "User (Readonly)",
+            "name": "disable_woocommerce_order_emails_user",
+            "type": "text",
+            "instructions": "Saves the user who disabled WC Order Emails. NOTE: Readonly, do not edit this field!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6153210818d8c",
             "label": "Password Reset Email Message",
             "name": "password_reset_message",
             "type": "wysiwyg",
             "instructions": "<p>This is the message sent when a password reset is requested for a user account. These tokens are available: <code>{{sitename}}<\/code>, <code>{{reset_url}}<\/code>, and <code>{{username}}<\/code>.<\/p>\r\n\r\n<p>NOTE: Use the <code>{{reset_url}}<\/code> token as the \"link\" attribute value in a hyperlink (e.g. \"Click here\" to reset your password). When adding <code>{{reset_url}}<\/code> as the link value, be careful as WordPress likes to insert \"http:\/\/\" as a part of the attribute value, remove that if it does.<\/p>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_61e5eba9c910e",
+            "label": "Customer Renewal Invoice Email",
+            "name": "customer_renewal_invoice_email",
+            "type": "wysiwyg",
+            "instructions": "<p><strong>01\/21\/2022 (16:06) - <\/strong> IMPORTANT: This feature is not working yet. Added as a placeholder by MWENDER.<\/p>\r\n\r\n<p>Any text entered here will replace the text at the top of the Customer Renewal Invoice Email. These tokens are available: <code>{{blogname}}<\/code> and <code>{{payment_url}}<\/code>.<\/p>\r\n\r\n<p>NOTE: Use the <code>{{payment_url}}<\/code> token as the \"link\" attribute value in a hyperlink (e.g. \"Click here\" to pay). When adding <code>{{payment_url}}<\/code> as the link value, be careful as WordPress likes to insert \"http:\/\/\" as a part of the attribute value, remove that if it does.<\/p>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -146,5 +201,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632839172
+    "show_in_rest": 0,
+    "modified": 1642799213
 }
