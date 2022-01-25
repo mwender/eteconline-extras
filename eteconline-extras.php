@@ -7,7 +7,7 @@
  * Author URI:      https://mwender.com
  * Text Domain:     eteconline-extras
  * Domain Path:     /languages
- * Version:         0.9.0
+ * Version:         1.0.0
  *
  * @package         Eteconline_Extras
  */
@@ -41,6 +41,7 @@ require_once( ETEC_PLUGIN_PATH . 'lib/fns/templates.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/utilities.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/woocommerce.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/woocommerce-memberships-for-teams.php' );
+require_once( ETEC_PLUGIN_PATH . 'lib/fns/woocommerce-subscriptions.php' );
 require_once( ETEC_PLUGIN_PATH . 'lib/fns/wp-login.php' );
 
 

@@ -1,0 +1,44 @@
+{
+    "key": "group_61f042fe2d499",
+    "title": "Subscription Options",
+    "fields": [
+        {
+            "key": "field_61f04306e0ec6",
+            "label": "Additional Emails",
+            "name": "additional_emails",
+            "type": "text",
+            "instructions": "Add a comma seperated list of any additional emails to add to this subscription's distribution.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "shop_subscription"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1643135821
+}
