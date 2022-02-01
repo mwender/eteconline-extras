@@ -125,6 +125,15 @@ add_filter( 'wc_memberships_for_teams_join_team_redirect_to', __NAMESPACE__ . '\
  * @return     string  The template
  */
 function woocommerce_templates( $template, $template_name, $template_path ) {
+
+  // Override specific third-party plugin email templates:
+  $template_filename = basename( $template );
+  switch ( $template_filename ) {
+    case 'customer-completed-renewal-order.php':
+      return ETEC_PLUGIN_PATH . 'lib/templates/woocommerce-subscriptions/emails/customer-completed-renewal-order.php';
+      break;
+  }
+
   global $woocommerce;
   $_template = $template;
   if ( ! $template_path )

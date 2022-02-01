@@ -1,0 +1,82 @@
+{
+    "key": "group_61f860a2d51e7",
+    "title": "Subscription Renewal Email Settings",
+    "fields": [
+        {
+            "key": "field_61f863de3a50b",
+            "label": "Completed Customer Renewal Order Email Subject",
+            "name": "subject_customer_renewal_order",
+            "type": "text",
+            "instructions": "The subject line of a completed order email sent to a customer. Can use <code>{order_date}<\/code> and <code>{blogname}<\/code> as tokens.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f860af67f88",
+            "label": "Completed Customer Renewal Order Heading",
+            "name": "customer_renewal_order_heading",
+            "type": "text",
+            "instructions": "Defaults to \"Your renewal order is complete\". May want to change this to indicate that the order status is \"Paid in Full\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f866b9e08a5",
+            "label": "Completed Renewal Order Email Body",
+            "name": "completed_order_renewal_email_body",
+            "type": "text",
+            "instructions": "This is the text that appears at the top of the completed renewal order email. Defaults to \"We have finished processing your subscription renewal order.\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-subscription-renewals"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1643670254
+}
