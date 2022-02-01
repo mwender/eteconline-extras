@@ -5,6 +5,8 @@ namespace eteconline\woocommercesubscriptions;
 /**
  * Adds additional receipients to the email sent for subscription renewals.
  *
+ * Special thanks: https://anchor.host/multiple-email-recipients-for-woocommerce-subscriptions/
+ *
  * @param      string  $recipient  The recipient
  * @param      object  $order      The order
  *
