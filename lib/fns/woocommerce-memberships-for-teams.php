@@ -3,6 +3,21 @@
 namespace eteconline\memberships;
 
 /**
+ * Allowing our ACF options for show for WC Memberships Teams CPTs.
+ *
+ * @param      array   $allowed_meta_box_ids  The allowed meta box identifiers
+ * @param      string  $post_type             The post type
+ *
+ * @return     array  Filtered array of allowed meta box IDs.
+ */
+function filter_allowed_metaboxes_for_teams( $allowed_meta_box_ids, $post_type ){
+  $allowed_meta_box_ids[] = 'acf-group_622f812467eee';
+
+  return $allowed_meta_box_ids;
+}
+add_filter( 'wc_memberships_for_teams_allowed_meta_box_ids', __NAMESPACE__ . '\\filter_allowed_metaboxes_for_teams', 10, 2 );
+
+/**
  * Modifies the list of orders shown in the Customer's Recent Orders.
  *
  * @param      array  $q      The query
