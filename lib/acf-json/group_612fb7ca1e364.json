@@ -1,7 +1,62 @@
 {
     "key": "group_612fb7ca1e364",
-    "title": "ETEC Settings",
+    "title": "ETEC General Settings",
     "fields": [
+        {
+            "key": "field_61523b3702744",
+            "label": "Disable WordPress Emails?",
+            "name": "disable_wordpress_emails",
+            "type": "true_false",
+            "instructions": "<p>Select this option when you wish to stop WordPress from sending any emails. This is useful when you are manually assigning memberships, and you don't want to send \"New Order\" notification emails.<\/p><p>NOTE: In order for this switch to work, the <a href=\"https:\/\/wordpress.org\/plugins\/disable-emails\/\" target=\"_blank\">Disable Emails plugin<\/a> must be installed.<\/p>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Switch on to disable WordPress Emails.",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_61eb18daa3d66",
+            "label": "Timestamp (Readonly)",
+            "name": "disable_wordpress_emails_timestamp",
+            "type": "date_time_picker",
+            "instructions": "Saves the date and time WC Emails were disabled. NOTE: Readonly, do not edit this field!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y g:i a",
+            "return_format": "m\/d\/Y g:i a",
+            "first_day": 0
+        },
+        {
+            "key": "field_61eb1c9c97bb1",
+            "label": "User (Readonly)",
+            "name": "disable_wordpress_emails_user",
+            "type": "text",
+            "instructions": "Saves the user who disabled WC Order Emails. NOTE: Readonly, do not edit this field!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
         {
             "key": "field_613f54ae0937d",
             "label": "WooCommerce Checkout Before Order Review Message",
@@ -91,61 +146,6 @@
             "ui": 1
         },
         {
-            "key": "field_61523b3702744",
-            "label": "Disable WooCommerce Order Emails?",
-            "name": "disable_woocommerce_order_emails",
-            "type": "true_false",
-            "instructions": "Select this option when you wish to stop WooCommerce from sending any order notification emails. This is useful when you are manually assigning memberships, and you don't want to send \"New Order\" notification emails.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "Switch on to disable WooCommerce Order Emails.",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_61eb18daa3d66",
-            "label": "Timestamp (Readonly)",
-            "name": "disable_woocommerce_order_emails_timestamp",
-            "type": "date_time_picker",
-            "instructions": "Saves the date and time WC Emails were disabled. NOTE: Readonly, do not edit this field!",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "m\/d\/Y g:i a",
-            "return_format": "m\/d\/Y g:i a",
-            "first_day": 0
-        },
-        {
-            "key": "field_61eb1c9c97bb1",
-            "label": "User (Readonly)",
-            "name": "disable_woocommerce_order_emails_user",
-            "type": "text",
-            "instructions": "Saves the user who disabled WC Order Emails. NOTE: Readonly, do not edit this field!",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "25",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_6153210818d8c",
             "label": "Password Reset Email Message",
             "name": "password_reset_message",
@@ -202,5 +202,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642799213
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1647472645
 }

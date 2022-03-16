@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.8.3  
 **Requires PHP:** 7.4  
-**Stable tag:** 1.2.0  
+**Stable tag:** 1.3.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 1.3.0 ###
+* Updating "Disable Emails" switch to work by activating the Disable Emails plugin and deactivating WP Offload SES.
 
 ### 1.2.0 ###
 * Adding WC Memberships Team CPT options via ACF.

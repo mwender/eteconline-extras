@@ -48,42 +48,6 @@ function checkout_before_order_review(){
 add_action( 'woocommerce_checkout_before_order_review', __NAMESPACE__ . '\\checkout_before_order_review', 99 );
 
 /**
- * Disables the woocommerce order emails.
- *
- * @param      object  $email_class  The email class
- */
-function disable_woocommerce_order_emails( $email_class ){
-  $disable = get_field( 'disable_woocommerce_order_emails', 'option' );
-  if ( is_admin() && ! wp_doing_ajax() && $disable ) {
-    add_action( 'admin_notices', function(){
-      ?>
-      <div class="notice notice-warning" style="margin-bottom: 1em;">
-        <p><?php
-        $timestamp = get_field( 'disable_woocommerce_order_emails_timestamp', 'option' );
-        $user = get_field( 'disable_woocommerce_order_emails_user', 'option' );
-        _e( 'NOTE: WooCommerce order emails are currently disabled when editing orders in the admin. Please see <a href="' . site_url( '/wp-admin/admin.php?page=etec-general-settings' ) . '">ETEC Settings</a> to reenable them. (Disabled by ' . $user . ' on ' . $timestamp . '.)', 'eteconline' ); ?></p>
-      </div>
-      <?php
-    });
-    // New order emails
-    remove_action( 'woocommerce_order_status_pending_to_processing_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_pending_to_completed_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_pending_to_on-hold_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_failed_to_processing_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_failed_to_completed_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_failed_to_on-hold_notification', array( $email_class->emails['WC_Email_New_Order'], 'trigger' ) );
-
-    // Processing order emails
-    remove_action( 'woocommerce_order_status_pending_to_processing_notification', array( $email_class->emails['WC_Email_Customer_Processing_Order'], 'trigger' ) );
-    remove_action( 'woocommerce_order_status_pending_to_on-hold_notification', array( $email_class->emails['WC_Email_Customer_Processing_Order'], 'trigger' ) );
-
-    // Completed order emails
-    remove_action( 'woocommerce_order_status_completed_notification', array( $email_class->emails['WC_Email_Customer_Completed_Order'], 'trigger' ) );
-  }
-}
-add_action( 'woocommerce_email', __NAMESPACE__ . '\\disable_woocommerce_order_emails' );
-
-/**
  * Prevents the "Field 'Team Name' is a required field." error duing checkout for subscription renewals with Manual Payment.
  *
  * @param      array   $fields   The fields
