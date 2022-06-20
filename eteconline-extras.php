@@ -7,7 +7,7 @@
  * Author URI:      https://mwender.com
  * Text Domain:     eteconline-extras
  * Domain Path:     /languages
- * Version:         1.3.1
+ * Version:         1.3.2
  *
  * @package         Eteconline_Extras
  */

@@ -51,7 +51,7 @@ add_action( 'admin_notices', function(){
     <p><?php
     $timestamp = get_field( 'disable_wordpress_emails_timestamp', 'option' );
     $user = get_field( 'disable_wordpress_emails_user', 'option' );
-    _e( 'NOTE: We have disabled all WordPress emails by activating <code>Disable Emails</code> and deactivating <code>WP Offload SES</code>. Please see <a href="' . site_url( '/wp-admin/admin.php?page=etec-general-settings' ) . '">ETEC Settings</a> to reenable them. (Disabled by ' . $user . ' on ' . $timestamp . '.)', 'eteconline' ); ?></p>
+    _e( 'NOTE: We have disabled all WordPress emails by activating <code>Disable Emails</code> and deactivating <code>Post SMTP</code>. Please see <a href="' . site_url( '/wp-admin/admin.php?page=etec-general-settings' ) . '">ETEC Settings</a> to reenable them. (Disabled by ' . $user . ' on ' . $timestamp . '.)', 'eteconline' ); ?></p>
   </div>
   <?php
   }

@@ -5,7 +5,7 @@ Tags: shortcodes
 Requires at least: 5.7
 Tested up to: 5.8.3
 Requires PHP: 7.4
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 == Changelog ==
+
+= 1.3.2 =
+* Correcting "Disable Emails" notice to reference "Post SMTP" instead of "Offload SES".
 
 = 1.3.1 =
 * Updating "Disable Emails" to deactivate/activate the Post SMTP plugin.
