@@ -27,15 +27,16 @@ function etec_save_post( $post_id ) {
 
       // Disable Emails
       activate_plugins( [ 'disable-emails/disable-emails.php' ], null, false, true );
-      deactivate_plugins( [ 'wp-offload-ses/wp-offload-ses.php' ], true );
-
+      //deactivate_plugins( [ 'wp-offload-ses/wp-offload-ses.php' ], true );
+      deactivate_plugins( [ 'post-smtp/postman-smtp.php' ], true );
     } else {
       // Remove timestamp and username
       update_field('field_61eb18daa3d66', null, 'option' );
       update_field( 'field_61eb1c9c97bb1', null, 'option' );
 
       // Activate Emails
-      activate_plugins( [ 'wp-offload-ses/wp-offload-ses.php' ], null, false, true );
+      //activate_plugins( [ 'wp-offload-ses/wp-offload-ses.php' ], null, false, true );
+      activate_plugins( [ 'post-smtp/postman-smtp.php' ], null, false, true );
       deactivate_plugins( [ 'disable-emails/disable-emails.php' ], true );
     }
   }
