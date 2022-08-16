@@ -30,7 +30,7 @@ function modify_my_order_query( $q ) {
 
   // Check if the user has additional orders
   $secondary_post_ids = get_user_meta( $current_user_id, 'additional_orders', false );
-  if ( ! empty( $secondary_post_ids ) ) {
+  if ( ! empty( $secondary_post_ids ) && ! empty( $secondary_post_ids[0] ) ) {
 
     // Get All Orders ID for the main customers
     $prepare_query = $wpdb->prepare(
@@ -96,7 +96,7 @@ add_filter( 'user_has_cap', __NAMESPACE__ .  '\\give_permissions'  , 10, 3 );
  *
  * @param      object  $team   The team
  */
-function add_additional_orders_to_each_team_member( $team ){
+function add_additional_orders_to_each_team_member( $team, $echo_note = true ){
   // Get all orders associated with this team.
   $team_id = is_object( $team ) ? $team->get_id() : $team;
   $subscription_id =  get_post_meta( $team_id, '_subscription_id', true );
@@ -119,7 +119,31 @@ function add_additional_orders_to_each_team_member( $team ){
       $status = update_user_meta( $user->ID, 'additional_orders', $orders_array );
       //uber_log( '🔔 Updating additional_orders for User ' . $user->ID . ' (status: ' . $status . ')' );
     }
-    echo '<p>All orders associated with this team have been added as <code>additional_orders</code> to each member of this team.</p>';
+    if( $echo_note )
+      echo '<p>All orders associated with this team have been added as <code>additional_orders</code> to each member of this team.</p>';
   }
 }
 add_action( 'wc_memberships_for_teams_after_team_billing_details', __NAMESPACE__ . '\\add_additional_orders_to_each_team_member' );
+
+/**
+ * Adds all orders associated with any teams the user is a member of to the user's `additional_orders`.
+ */
+function add_additional_orders_to_current_user(){
+  $current_user_id = get_current_user_id();
+
+  if( false === ( $additional_orders = get_transient( 'additional_orders_timestamp_' . $current_user_id ) ) ){
+    $teams = wc_memberships_for_teams_get_teams( $current_user_id );
+    foreach( $teams as $team ){
+      add_additional_orders_to_each_team_member( $team, false );
+    }
+    $additional_ids = get_user_meta( get_current_user_id(), 'additional_orders', false );
+    uber_log( '🔔 add_additional_orders_to_current_user() $additional_ids = ' . print_r($additional_ids,true) );
+    $timestamp = current_time( 'timestamp' );
+    set_transient( 'additional_orders_timestamp_' . $current_user_id, $timestamp, 6 * HOUR_IN_SECONDS );
+  } else {
+    $additional_ids = get_user_meta( get_current_user_id(), 'additional_orders', false );
+    uber_log( '🔔 add_additional_orders_to_current_user() $additional_ids = ' . print_r($additional_ids,true) );
+  }
+}
+add_action( 'woocommerce_account_dashboard', __NAMESPACE__ . '\\add_additional_orders_to_current_user' );
+add_action( 'woocommerce_account_content', __NAMESPACE__ . '\\add_additional_orders_to_current_user' );

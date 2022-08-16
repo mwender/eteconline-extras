@@ -33,6 +33,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 
 == Changelog ==
 
+= 1.4.0 =
+* Adding `add_additional_orders_to_current_user()` which is hooked to `woocommerce_account_dashboard` and `woocommerce_account_content` so that `additional_orders` will get populated when users view "My Account" and "My Account > Orders".
+
 = 1.3.2 =
 * Correcting "Disable Emails" notice to reference "Post SMTP" instead of "Offload SES".
 
