@@ -54,6 +54,9 @@ function display_friday_events( $atts ){
     'terms' => 'friday-etec-meetings',
   ], $atts );
 
+  if( ! function_exists( 'tribe_get_events' ) )
+    return get_alert(['type' => 'info', 'description' => 'Please install The Events Calendar plugin.','title' => 'Missing Plugin: The Events Calenar']);
+
   $order = ( 'ASC' != $args['order'] )? 'DESC' : 'ASC' ;
   $posts_per_page = ( ! is_integer( $args['posts_per_page'] ) )? 3 : $args['posts_per_page'] ;
 
