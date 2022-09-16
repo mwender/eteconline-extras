@@ -28,6 +28,14 @@ function modify_my_order_query( $q ) {
   global $wpdb;
   $current_user_id = get_current_user_id();
 
+  $user_meta = get_userdata( $current_user_id );
+  $user_roles = $user_meta->roles;
+
+  // Users with role `ContentOnly` can't view order details:
+  if( is_array( $user_roles ) && in_array( 'content-only-subscriber', $user_roles ) ){
+    return $q;
+  }
+
   // Check if the user has additional orders
   $secondary_post_ids = get_user_meta( $current_user_id, 'additional_orders', false );
   if ( ! empty( $secondary_post_ids ) && ! empty( $secondary_post_ids[0] ) ) {

@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.8.3  
 **Requires PHP:** 7.4  
-**Stable tag:** 1.5.0  
+**Stable tag:** 1.6.0  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 1.6.0 ###
+* If user has role "Content Only Subscriber", that user can't see orders for their Team.
 
 ### 1.5.0 ###
 * Adding "Team/Company" column to admin `shop_subscription` CPT listing.
