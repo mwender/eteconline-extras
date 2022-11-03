@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.8.3  
 **Requires PHP:** 7.4  
-**Stable tag:** 1.6.1  
+**Stable tag:** 1.6.2  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 1.6.2 ###
+* Updating `[friday_events]` transient timeout to `6 * HOUR_IN_SECONDS`.
 
 ### 1.6.1 ###
 * Storing `[friday_events]` HTML as transient to reduce on page queries.

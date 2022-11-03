@@ -94,7 +94,7 @@ function display_friday_events( $atts ){
       }
     endif;
     $event_list_html = render_template( 'events-list', $data );
-    set_transient( 'event_list_html', $event_list_html, 30 * MINUTE_IN_SECONDS );
+    set_transient( 'event_list_html', $event_list_html, 6 * HOUR_IN_SECONDS );
   endif;
 
   return $event_list_html;
