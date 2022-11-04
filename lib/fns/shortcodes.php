@@ -61,8 +61,8 @@ function display_friday_events( $atts ){
     $order = ( 'ASC' != $args['order'] )? 'DESC' : 'ASC' ;
     $posts_per_page = ( ! is_integer( $args['posts_per_page'] ) )? 3 : $args['posts_per_page'] ;
 
-    $next_friday = strtotime( 'next friday' );
-    $start_date = date( 'Y-m-d H:i:s', $next_friday );
+    $today = strtotime( 'today' );
+    $start_date = date( 'Y-m-d H:i:s', $today );
 
     $query_args = [
       'start_date'  => $start_date,

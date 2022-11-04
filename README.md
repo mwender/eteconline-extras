@@ -5,7 +5,7 @@
 **Requires at least:** 5.7  
 **Tested up to:** 5.8.3  
 **Requires PHP:** 7.4  
-**Stable tag:** 1.6.3  
+**Stable tag:** 1.6.4  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -32,6 +32,9 @@ Use `[friday_events/]` to display a listing of events from the "ETEC Friday Even
 ```
 
 ## Changelog ##
+
+### 1.6.4 ###
+* Adjusting `[friday_events]` query to start on "today".
 
 ### 1.6.3 ###
 * Adding admin notice to `[friday_events]` indicating the content has been pulled from the transient cache.
