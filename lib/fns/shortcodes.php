@@ -57,7 +57,10 @@ function display_friday_events( $atts ){
   if( ! function_exists( 'tribe_get_events' ) )
     return get_alert(['type' => 'info', 'description' => 'Please install The Events Calendar plugin.','title' => 'Missing Plugin: The Events Calenar']);
 
-  if( false === ( $event_list_html = get_transient( 'event_list_html' ) ) ){
+  if(
+    ( isset( $_REQUEST['update-events'] ) && 'true' === $_REQUEST['update-events'] )
+    || false === ( $event_list_html = get_transient( 'event_list_html' ) )
+  ){
     $order = ( 'ASC' != $args['order'] )? 'DESC' : 'ASC' ;
     $posts_per_page = ( ! is_integer( $args['posts_per_page'] ) )? 3 : $args['posts_per_page'] ;
 
@@ -97,7 +100,7 @@ function display_friday_events( $atts ){
     set_transient( 'event_list_html', $event_list_html, 6 * HOUR_IN_SECONDS );
   } else {
     if( current_user_can( 'activate_plugins' ) )
-      $event_list_html .= get_alert(['type' => 'info', 'title' => 'Retrieved from Cached Transient (Admin-Only Note)', 'description' => 'This notice shows only to logged in ETEC Admins. The above Friday Events are being pulled from the database cache.']);
+      $event_list_html .= get_alert(['type' => 'info', 'title' => 'Retrieved from Cached Transient/Server-Side (Admin-Only Note)', 'description' => 'This notice shows only to logged in ETEC Admins. The above Friday Events are being pulled from the database cache.<br><br><strong><a href="?update-events=true">CLICK HERE</a></strong> to refresh the server cache.']);
   }
 
   return $event_list_html;
